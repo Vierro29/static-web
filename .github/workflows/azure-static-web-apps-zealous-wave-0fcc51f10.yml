@@ -28,8 +28,8 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for GitHub integrations (i.e. PR comments)
           action: "upload"
           ###### Repository/Build Configurations - Ajustados para React dentro de static-web ######
-          app_location: "static-web"              # Caminho onde está o package.json
-          api_location: ""                        # Deixe vazio se não tiver backend/API
+          app_location: "src"              # Caminho onde está o package.json
+          api_location: "api"                        # Deixe vazio se não tiver backend/API
           output_location: "static-web/build"     # Pasta gerada após npm run build
           ###### End of Repository/Build Configurations ######
 
