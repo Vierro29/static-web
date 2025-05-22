@@ -18,7 +18,8 @@ function App() {
   };
 
   const handleLogout = () => {
-    window.location.href = '/.auth/logout'; // Redireciona para logout
+    // Redireciona para o logout e volta para a página inicial após sair
+    window.location.href = '/.auth/logout?post_logout_redirect_uri=/';
   };
 
   return (
