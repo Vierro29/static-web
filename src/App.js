@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Oiiiiiie galera, achou que agora foi kkkk </h1>
+      <h1>Oiiiiiie galera, acho que agora foi kkkk </h1>
       <button onClick={callApi} disabled={loading}>
         {loading ? 'Carregando...' : 'Chamar API'}
       </button>
