@@ -5,18 +5,19 @@ function App() {
   const [response, setResponse] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const callApi = async () => {
-    setLoading(true);
-    try {
-      const res = await fetch('/api/hello'); // Altere o endpoint conforme sua API
-      const data = await res.json();
-      setResponse(data.message || JSON.stringify(data));
-    } catch (error) {
-      setResponse('Erro ao chamar a API.');
-      console.error(error);
-    }
-    setLoading(false);
-  };
+ const callApi = async () => {
+  setLoading(true);
+  try {
+    const res = await fetch('/api/minhaFuncaoProtegida'); // use o nome correto da sua função aqui
+    const data = await res.json();
+    setResponse(data.mensagem || JSON.stringify(data)); // pode ser "mensagem", não "message"
+  } catch (error) {
+    setResponse('Erro ao chamar a API.');
+    console.error(error);
+  }
+  setLoading(false);
+};
+
 
   return (
     <div className="App">
