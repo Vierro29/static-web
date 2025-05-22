@@ -1,6 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';  // Corrigido para a nova API
 import './index.css';
-import App from './App';
+import AppRouter from './AppRouter';      // Importa o roteador, não mais o App
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<AppRouter />);

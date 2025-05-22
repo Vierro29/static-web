@@ -1,13 +1,14 @@
+// src/Home.js
 import React, { useState } from 'react';
 
-function App() {
+function Home() {
   const [response, setResponse] = useState('');
   const [loading, setLoading] = useState(false);
 
   const callApi = async () => {
     setLoading(true);
     try {
-      const res = await fetch('/api/minhaFuncaoProtegida'); // Altere conforme o nome real da função
+      const res = await fetch('/api/minhaFuncaoProtegida');
       const data = await res.json();
       setResponse(data.mensagem || JSON.stringify(data));
     } catch (error) {
@@ -18,13 +19,12 @@ function App() {
   };
 
   const handleLogout = () => {
-    // Redireciona para o logout e volta para a página inicial após sair
-    window.location.href = '/.auth/logout?post_logout_redirect_uri=/';
+    window.location.href = '/.auth/logout?post_logout_redirect_uri=/logout-confirmado';
   };
 
   return (
     <div className="App" style={{ fontFamily: 'Arial', padding: '20px' }}>
-      <h1>Oiiiiiie galera, acho que agora foi kkkk</h1>
+      <h1>Oiiiiiie galera, acho que agora foi kkkk </h1>
 
       <div style={{ marginBottom: '20px' }}>
         <button onClick={callApi} disabled={loading}>
@@ -36,12 +36,10 @@ function App() {
         </button>
       </div>
 
-      <div>
-        <strong>Resposta da API:</strong>
-        <pre>{response}</pre>
-      </div>
+      <p><strong>Resposta da API:</strong></p>
+      <pre>{response}</pre>
     </div>
   );
 }
 
-export default App;
+export default Home;
